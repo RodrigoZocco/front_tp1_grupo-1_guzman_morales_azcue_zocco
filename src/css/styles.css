@@ -1,0 +1,683 @@
+/* ========================================
+   VARIABLES CSS Y CONFIGURACIÓN GENERAL
+   ======================================== */
+
+:root {
+  /* Colores principales */
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary-color: #8b5cf6;
+  --accent-color: #ec4899;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --background-light: #f9fafb;
+  --background-white: #ffffff;
+  --border-color: #e5e7eb;
+
+  /* Tipografías */
+  --font-heading: "Poppins", sans-serif;
+  --font-body: "Roboto", sans-serif;
+
+  /* Espaciado */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+
+  /* Bordes y sombras */
+  --border-radius: 12px;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --box-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background-color: var(--background-light);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ========================================
+   NAVEGACIÓN
+   ======================================== */
+
+.navbar {
+  background-color: var(--background-white);
+  box-shadow: var(--box-shadow);
+  padding: var(--spacing-sm) 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-md);
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* ========================================
+   HERO SECTION (INDEX)
+   ======================================== */
+
+.hero {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+}
+
+.btn-primary {
+  background-color: white;
+  color: var(--primary-color);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+.welcome-message {
+  margin-top: var(--spacing-md);
+  font-size: 1.1rem;
+  padding: var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--border-radius);
+  animation: fadeIn 0.5s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   SECCIONES DEL INDEX
+   ======================================== */
+
+.team-info {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--background-white);
+}
+
+.team-info h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+  color: var(--primary-color);
+}
+
+.team-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-light);
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl) auto;
+  text-align: center;
+}
+
+.team-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-lg);
+}
+
+.value-card {
+  background-color: var(--background-light);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-color);
+}
+
+/* ========================================
+   TARJETAS DE MIEMBROS (INDEX)
+   ======================================== */
+
+.team-members {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--background-light);
+}
+
+.team-members h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--primary-color);
+}
+
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.member-card {
+  background-color: var(--background-white);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--box-shadow-lg);
+}
+
+.member-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 auto var(--spacing-md);
+}
+
+.member-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--text-dark);
+}
+
+.member-card p {
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ========================================
+   PÁGINAS INDIVIDUALES - PERFILES
+   ======================================== */
+
+.profile-container {
+  padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+  flex: 1;
+}
+
+.back-navigation {
+  margin-bottom: var(--spacing-lg);
+}
+
+.btn-back {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.profile-card {
+  background-color: var(--background-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-xl);
+  box-shadow: var(--box-shadow-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+.profile-info-header {
+  flex: 1;
+}
+
+.profile-name {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.profile-location,
+.profile-age {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin: var(--spacing-xs) 0;
+}
+
+.profile-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.profile-section h2 {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.skill-tag {
+  background-color: var(--primary-color);
+  color: white;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.favorites-list {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites-list li {
+  background-color: var(--background-light);
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.btn-interactive {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-interactive:hover {
+  background-color: var(--primary-dark);
+}
+
+.details-box {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  background-color: var(--background-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--accent-color);
+  animation: fadeIn 0.3s ease;
+}
+
+.details-box p {
+  margin: var(--spacing-xs) 0;
+}
+
+/* ========================================
+   NAVEGACIÓN ENTRE PERFILES
+   ======================================== */
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-sm);
+}
+
+.btn-nav {
+  flex: 1;
+  text-align: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-nav:hover {
+  background-color: var(--primary-dark);
+}
+
+.btn-home {
+  background-color: var(--secondary-color);
+}
+
+/* ========================================
+   BITÁCORA
+   ======================================== */
+
+.bitacora-container {
+  padding: var(--spacing-lg) 0 var(--spacing-xl) 0;
+  flex: 1;
+}
+
+.page-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-xl);
+}
+
+.bitacora-section {
+  background-color: var(--background-white);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  box-shadow: var(--box-shadow);
+}
+
+.bitacora-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+}
+
+.bitacora-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--text-dark);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+.bitacora-content p {
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.bitacora-content strong {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.bitacora-content em {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+  background-color: var(--text-dark);
+  color: white;
+  text-align: center;
+  padding: var(--spacing-lg) 0;
+  margin-top: auto;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - 400px
+   ======================================== */
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .team-info h2,
+  .team-members h2,
+  .page-title {
+    font-size: 1.8rem;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .navigation-buttons {
+    flex-direction: column;
+  }
+
+  .btn-nav {
+    width: 100%;
+  }
+
+  .team-values,
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - 900px
+   ======================================== */
+
+@media (max-width: 900px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .team-values,
+  .members-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  .profile-card {
+    padding: var(--spacing-lg);
+  }
+
+  .bitacora-section {
+    padding: var(--spacing-md);
+  }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - 1200px+
+   ======================================== */
+
+@media (min-width: 1200px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .team-values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ========================================
+   TEMAS ALTERNATIVOS (para JS)
+   ======================================== */
+
+body.theme-dark {
+  --primary-color: #f97316;
+  --secondary-color: #fb923c;
+  --accent-color: #fdba74;
+}
+
+body.theme-green {
+  --primary-color: #10b981;
+  --secondary-color: #34d399;
+  --accent-color: #6ee7b7;
+}
+
+body.theme-purple {
+  --primary-color: #a855f7;
+  --secondary-color: #c084fc;
+  --accent-color: #e9d5ff;
+}
