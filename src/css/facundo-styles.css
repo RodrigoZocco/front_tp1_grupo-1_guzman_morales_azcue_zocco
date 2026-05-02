@@ -1,0 +1,38 @@
+#profilePhoto {
+    transition: ease-in-out 0.3s;
+}
+
+#profilePhoto:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.skill-tag {
+    transition: ease-in-out 0.2s;
+}
+
+.skill-tag:hover {
+    transform: translateY(-0.3rem);
+    opacity: 0.9;
+}
+
+.favorites-list li {
+    transition: ease-in-out 0.2s;
+}
+
+.favorites-list li:hover {
+    transform: translateX(1rem);
+}
+
+.confettiBtn {
+    width: 200px;
+    height: 40px;
+    transition: ease-in-out 0.2s;
+}
+
+.confettiBtn:hover {
+    transform: scale(1.05);
+}
+
+.confettiBtn:active {
+    transform: scale(1);
+}
