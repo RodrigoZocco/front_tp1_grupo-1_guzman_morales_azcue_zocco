@@ -1,6 +1,5 @@
 // Esperar a que el DOM esté completamente cargado
 document.addEventListener("DOMContentLoaded", function () {
-
   // FUNCIÓN 1: Toggle de detalles de habilidades
 
   const toggleSkillsBtn = document.getElementById("toggleSkillsBtn");
@@ -73,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("✅ JavaScript de página individual cargado correctamente");
 });
-
 
 // ANIMACIONES CSS ADICIONALES (son dinámicas)
 
