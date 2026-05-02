@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOMBRE - Perfil</title>
-    <link rel="stylesheet" href="../../css/styles.css" />
+    <title>Rodrigo Zocco - Perfil</title>
+    <link rel="stylesheet" href="../../css/rodrigo-styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -38,41 +38,48 @@
               id="profilePhoto"
             />
             <div class="profile-info-header">
-              <h1 class="profile-name">NOMBRE</h1>
-              <p class="profile-location">📍 UBICACION</p>
-              <p class="profile-age">🎂 99 años</p>
+              <audio
+                id="pelotaSonido"
+                src="../../assets/pelota-pica.mp3"
+              ></audio>
+              <h1 class="profile-name">
+                Rodrigo Zocco <span id="pelota-basket">🏀</span>
+              </h1>
+              <p class="profile-location">📍 Argentina</p>
+              <p class="profile-age">🎂 27 años</p>
+              <p>
+                🏆 Me gusta el basket (clickea la pelota para escucharla 😉)
+              </p>
             </div>
           </div>
 
           <div class="profile-section">
             <h2>Habilidades</h2>
             <div class="skills-container">
-              <span class="skill-tag">A</span>
-              <span class="skill-tag">B</span>
-              <span class="skill-tag">C</span>
-              <span class="skill-tag">D</span>
-              <span class="skill-tag">E</span>
-              <span class="skill-tag">F</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">NoSQL</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">UML</span>
             </div>
           </div>
 
           <div class="profile-section">
             <h2>Películas Favoritas</h2>
             <ul class="favorites-list">
-              <li>🎬 A</li>
-              <li>🎬 B</li>
-              <li>🎬 C</li>
-              <li>🎬 D</li>
+              <li>🎬 Peaky Blinders: El hombre inmortal</li>
+              <li>🎬 Batman: el caballero de la noche</li>
+              <li>🎬 Interestellar</li>
             </ul>
           </div>
 
           <div class="profile-section">
             <h2>Discos Musicales Favoritos</h2>
             <ul class="favorites-list">
-              <li>🎵 A</li>
-              <li>🎵 B</li>
-              <li>🎵 C</li>
-              <li>🎵 D</li>
+              <li>🎵 Nach Scratch - Mejor que el silencio</li>
+              <li>🎵 Linkin Park - Hybrid Theory</li>
+              <li>🎵 Los Cafres - Suena la Alarma</li>
             </ul>
           </div>
         </div>
@@ -82,5 +89,7 @@
         </div>
       </div>
     </div>
+
+    <script src="../../js/rodrigo.js"></script>
   </body>
 </html>

@@ -1,0 +1,463 @@
+/* ========================================
+   VARIABLES DE COLOR
+   ======================================== */
+:root {
+  --color-azul: #011935;
+  --color-verde: #d2fe08;
+  --color-blanco: #ffffff;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* ========================================
+     RESET Y ESTILOS BASE
+     ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--color-azul);
+  color: var(--color-blanco);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* ========================================
+     NAVBAR
+     ======================================== */
+.navbar {
+  background-color: rgba(1, 25, 53, 0.95);
+  padding: var(--spacing-md) 0;
+  box-shadow: 0 2px 10px rgba(210, 254, 8, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-verde);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.nav-links a:hover {
+  color: var(--color-verde);
+  background-color: rgba(210, 254, 8, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+     PERFIL CONTAINER
+     ======================================== */
+.profile-container {
+  padding: var(--spacing-lg) 0;
+  min-height: calc(100vh - 80px);
+}
+
+.back-navigation {
+  margin-bottom: var(--spacing-lg);
+}
+
+.btn-back {
+  display: inline-block;
+  color: var(--color-blanco);
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+  font-weight: 500;
+  border: 2px solid transparent;
+}
+
+.btn-back:hover {
+  background-color: var(--color-blanco);
+  color: var(--color-azul);
+  border-color: var(--color-verde);
+  transform: translateX(-5px);
+}
+
+/* ========================================
+     TARJETA DE PERFIL
+     ======================================== */
+.profile-card {
+  background: linear-gradient(
+    135deg,
+    rgba(1, 25, 53, 0.8) 0%,
+    rgba(1, 25, 53, 0.95) 100%
+  );
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  box-shadow: 0 10px 40px rgba(210, 254, 8, 0.15);
+  border: 2px solid rgba(210, 254, 8, 0.3);
+}
+
+/* ========================================
+     HEADER DEL PERFIL
+     ======================================== */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 2px solid rgba(210, 254, 8, 0.3);
+  flex-wrap: wrap;
+}
+
+.photo-container {
+  flex-shrink: 0;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--color-verde);
+  box-shadow: 0 5px 20px rgba(210, 254, 8, 0.3);
+}
+
+.profile-info-header {
+  flex: 1;
+  min-width: 200px;
+}
+
+.profile-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-verde);
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-location,
+.profile-age {
+  font-size: 1.1rem;
+  color: var(--color-blanco);
+  margin: 0.25rem 0;
+  opacity: 0.9;
+}
+
+/* ========================================
+     SECCIONES DEL PERFIL
+     ======================================== */
+.profile-section {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--color-verde);
+}
+
+.profile-section h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  color: var(--color-verde);
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+}
+
+/* ========================================
+     HABILIDADES
+     ======================================== */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.skill-tag {
+  background-color: var(--color-blanco);
+  color: var(--color-azul);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  border: 2px solid var(--color-blanco);
+}
+
+.skill-tag:hover {
+  background-color: var(--color-verde);
+  border-color: var(--color-verde);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(210, 254, 8, 0.3);
+}
+
+/* ========================================
+     LISTAS FAVORITAS
+     ======================================== */
+.favorites-list {
+  list-style: none;
+  padding: 0;
+}
+
+.favorites-list li {
+  color: var(--color-blanco);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(210, 254, 8, 0.2);
+  transition: var(--transition);
+  font-size: 1.05rem;
+}
+
+.favorites-list li:last-child {
+  border-bottom: none;
+}
+
+.favorites-list li:hover {
+  color: var(--color-verde);
+  padding-left: 1rem;
+  transform: translateX(5px);
+}
+
+/* ========================================
+     NAVEGACIÓN INFERIOR
+     ======================================== */
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.btn-nav {
+  background-color: var(--color-blanco);
+  color: var(--color-azul);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid var(--color-blanco);
+}
+
+.btn-nav:hover {
+  background-color: var(--color-verde);
+  border-color: var(--color-verde);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 20px rgba(210, 254, 8, 0.4);
+}
+
+/* ========================================
+     RESPONSIVE DESIGN
+     ======================================== */
+
+/* Pantallas pequeñas - 400px */
+@media (max-width: 400px) {
+  .logo {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    gap: var(--spacing-sm);
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .profile-card {
+    padding: var(--spacing-md);
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--spacing-md);
+  }
+
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-name {
+    font-size: 1.8rem;
+  }
+
+  .profile-location,
+  .profile-age {
+    font-size: 1rem;
+  }
+
+  .profile-section h2 {
+    font-size: 1.4rem;
+  }
+
+  .skills-container {
+    gap: 0.5rem;
+  }
+
+  .skill-tag {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .btn-interactive {
+    width: 100%;
+    justify-content: center;
+    font-size: 0.95rem;
+  }
+
+  .favorites-list li {
+    font-size: 0.95rem;
+  }
+
+  .btn-nav {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.9rem 1.5rem;
+  }
+}
+
+/* Pantallas medianas - 400px a 900px */
+@media (min-width: 401px) and (max-width: 900px) {
+  .navbar .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .profile-name {
+    font-size: 2.2rem;
+  }
+
+  .skills-container {
+    justify-content: center;
+  }
+
+  .btn-interactive {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Pantallas grandes - 900px a 1200px */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .container {
+    width: 85%;
+  }
+
+  .profile-header {
+    gap: 2rem;
+  }
+
+  .profile-name {
+    font-size: 2.3rem;
+  }
+}
+
+/* Pantallas muy grandes - más de 1200px */
+@media (min-width: 1201px) {
+  .profile-card {
+    padding: 3rem;
+  }
+
+  .profile-section {
+    padding: 1.5rem;
+  }
+
+  .profile-name {
+    font-size: 2.8rem;
+  }
+
+  .profile-section h2 {
+    font-size: 2rem;
+  }
+}
+
+#pelota-basket {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bounce {
+  animation: bounce 0.5s ease;
+  animation-iteration-count: 6;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  30% {
+    transform: translateY(-15px) rotate(120deg);
+  }
+  60% {
+    transform: translateY(0) rotate(240deg);
+  }
+  100% {
+    transform: translateY(0) rotate(360deg);
+  }
+}
