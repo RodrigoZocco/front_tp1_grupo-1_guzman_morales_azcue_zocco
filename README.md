@@ -97,6 +97,10 @@ README.md
   - Al clickear la pelota de basket, hará un efecto de pique y se escuchara el sonido de la misma.
     ![Imagen](./src/img/js-rodrigo.jpg)
 
+- En la página de Facundo:
+  - Al clickear 2 veces el botón con texto "Secreto... oculto?", se activa confetti 🎉 como evento al hacer click en cualquier parte de la página (gracias a https://confettijs.org).
+  ![Imagen](./src/img/js-facundo.jpg)
+
 ---
 
 ## 🚀 Enlace al Proyecto Desplegado

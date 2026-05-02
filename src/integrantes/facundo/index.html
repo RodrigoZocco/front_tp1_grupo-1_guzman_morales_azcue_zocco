@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NOMBRE - Perfil</title>
     <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="stylesheet" href="../../css/facundo-styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -42,6 +43,10 @@
               <p class="profile-location">📍 Entre Ríos</p>
               <p class="profile-age">🎂 42 años</p>
             </div>
+
+            <div>
+              <button id="confetti" class="btn-interactive confettiBtn">Secreto... oculto? 🎉</button>
+            </div>
           </div>
 
           <div class="profile-section">
@@ -54,19 +59,12 @@
               <span class="skill-tag">SQL</span>
               <span class="skill-tag">React</span>
             </div>
-            <button id="toggleSkillsBtn" class="btn-interactive">
-              Mostrar más detalles
-            </button>
-            <div id="skillsDetails" class="hidden details-box">
-              <p>Mascota preferida: gato</p>
-            </div>
           </div>
 
           <div class="profile-section">
             <h2>Películas Favoritas</h2>
             <ul class="favorites-list">
               <li>🎬 The Lord of the Rings</li>
-              <li>🎬 The Godfather</li>
               <li>🎬 The Matrix</li>
               <li>🎬 Schindler's List</li>
             </ul>
@@ -78,7 +76,6 @@
               <li>🎵 The Dark Side of the Moon - Pink Floyd</li>
               <li>🎵 Led Zeppelin IV – Led Zeppelin</li>
               <li>🎵 Nevermind – Nirvana</li>
-              <li>🎵 Back in Black – AC/DC</li>
             </ul>
           </div>
         </div>
@@ -90,5 +87,6 @@
     </div>
 
     <script src="../../js/facundo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
   </body>
 </html>
