@@ -45,6 +45,7 @@ body {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
@@ -67,6 +68,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
 }
 
 .logo {
@@ -81,6 +84,7 @@ body {
   display: flex;
   list-style: none;
   gap: var(--spacing-md);
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -537,22 +541,92 @@ body {
 }
 
 /* ========================================
-   RESPONSIVE DESIGN - 400px
+   RESPONSIVE
    ======================================== */
 
 @media (max-width: 400px) {
+  .container {
+    padding: 0 var(--spacing-xs);
+  }
+
+  .navbar .container {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: var(--spacing-xs);
+  }
+
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .hero {
+    padding: var(--spacing-lg) 0;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
 
   .hero-subtitle {
     font-size: 1rem;
   }
 
+  .btn-primary {
+    font-size: 0.9rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  .team-info,
+  .team-members {
+    padding: var(--spacing-lg) 0;
+  }
+
   .team-info h2,
-  .team-members h2,
-  .page-title {
-    font-size: 1.8rem;
+  .team-members h2 {
+    font-size: 1.75rem;
+  }
+
+  .team-description {
+    font-size: 1rem;
+  }
+
+  .team-values {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .members-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  .value-card,
+  .member-card {
+    padding: var(--spacing-sm);
+  }
+
+  .value-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .member-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .member-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
   }
 
   .profile-header {
@@ -566,7 +640,11 @@ body {
   }
 
   .profile-name {
-    font-size: 2rem;
+    font-size: 1.75rem;
+  }
+
+  .profile-card {
+    padding: var(--spacing-sm);
   }
 
   .navigation-buttons {
@@ -577,33 +655,45 @@ body {
     width: 100%;
   }
 
-  .team-values,
-  .members-grid {
-    grid-template-columns: 1fr;
+  .page-title {
+    font-size: 1.75rem;
   }
 
-  .navbar .container {
-    flex-direction: column;
-    gap: var(--spacing-sm);
+  .page-subtitle {
+    font-size: 1rem;
   }
 
-  .nav-links {
-    flex-direction: column;
-    width: 100%;
-    text-align: center;
+  .bitacora-section {
+    padding: var(--spacing-sm);
+  }
+
+  .bitacora-section h2 {
+    font-size: 1.5rem;
   }
 }
 
-/* ========================================
-   RESPONSIVE DESIGN - 900px
-   ======================================== */
-
-@media (max-width: 900px) {
-  .hero-title {
-    font-size: 2.5rem;
+@media (min-width: 401px) and (max-width: 900px) {
+  .container {
+    padding: 0 var(--spacing-sm);
   }
 
-  .team-values,
+  .hero-title {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .team-info h2,
+  .team-members h2 {
+    font-size: 2rem;
+  }
+
+  .team-values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .members-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -611,10 +701,6 @@ body {
   .profile-header {
     flex-direction: column;
     text-align: center;
-  }
-
-  .container {
-    padding: 0 var(--spacing-sm);
   }
 
   .profile-card {
@@ -626,11 +712,21 @@ body {
   }
 }
 
-/* ========================================
-   RESPONSIVE DESIGN - 1200px+
-   ======================================== */
+@media (min-width: 901px) and (max-width: 1200px) {
+  .hero-title {
+    font-size: 2.75rem;
+  }
 
-@media (min-width: 1200px) {
+  .team-values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .members-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1201px) {
   .hero-title {
     font-size: 3.5rem;
   }
@@ -641,5 +737,9 @@ body {
 
   .members-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .profile-card {
+    padding: var(--spacing-xl);
   }
 }
