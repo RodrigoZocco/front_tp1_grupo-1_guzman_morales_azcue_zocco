@@ -100,7 +100,10 @@ README.md
 - En la página de Facundo:
   - Al clickear 2 veces el botón con texto "Secreto... oculto?", se activa confetti 🎉 como evento al hacer click en cualquier parte de la página (gracias a https://confettijs.org).
   ![Imagen](./src/img/js-facundo.jpg)
-
+  
+- En la página de Martín:
+  - Al hacer click en el botón animado "Tocar para una sorpresa 🎁", se ejecuta una función de JavaScript que revela un texto oculto mostrando su disco musical secreto ("Sueño Stereo").
+  ![Imagen](./src/img/js-Martin.png)
 ---
 
 ## 🚀 Enlace al Proyecto Desplegado
@@ -125,3 +128,4 @@ README.md
 - Por el momento no generamos imagenes con AI, solamente tomamos imagenes de internet. (Algunas son iconos, y otras son imagenes que fueron generada con AI pero no por nosotros. por ejemplo, la cara de un hombre sonriendo), esto con el objetivo de no usar caras de personas reales.
 
 ---
+
