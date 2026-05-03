@@ -3,14 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOMBRE - Perfil</title>
+    <title>Martín - Perfil Premium</title>
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    
+    <style>
+      /* Fondo oscuro degradado moderno */
+      body {
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+        color: #e0e0e0 !important;
+      }
+      
+      /* Tarjeta estilo Glassmorphism (Vidrio translúcido) */
+      .profile-card {
+        background: rgba(20, 25, 35, 0.7) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        border: 1px solid rgba(0, 210, 255, 0.3) !important;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 210, 255, 0.1) !important;
+        color: #ffffff !important;
+        border-radius: 15px !important;
+      }
+
+      /* Títulos y textos con brillo Neón Cyan */
+      .profile-name, h2 {
+        color: #00d2ff !important;
+        text-shadow: 0 0 10px rgba(0, 210, 255, 0.6) !important;
+        border-bottom-color: rgba(0, 210, 255, 0.2) !important;
+      }
+      .profile-location, .profile-age {
+        color: #b0c4de !important;
+      }
+
+      /* Foto de perfil con resplandor 3D */
+      .profile-photo {
+        border: 3px solid #00d2ff !important;
+        box-shadow: 0 0 25px rgba(0, 210, 255, 0.8) !important;
+        transition: transform 0.3s ease !important;
+      }
+      .profile-photo:hover {
+        transform: scale(1.05) !important;
+      }
+
+      /* Etiquetas de habilidades estilo Cyberpunk */
+      .skill-tag {
+        background: transparent !important;
+        color: #00d2ff !important;
+        border: 1px solid #00d2ff !important;
+        box-shadow: 0 0 8px rgba(0, 210, 255, 0.3) inset, 0 0 8px rgba(0, 210, 255, 0.3) !important;
+        font-weight: bold !important;
+        transition: all 0.3s ease !important;
+      }
+      .skill-tag:hover {
+        background: #00d2ff !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px #00d2ff inset, 0 0 15px #00d2ff !important;
+        transform: translateY(-3px) !important;
+      }
+
+      /* Listas de películas y música con efecto Neón */
+      .favorites-list li {
+        background: transparent !important;
+        color: #00d2ff !important;
+        border: 1px solid #00d2ff !important;
+        box-shadow: 0 0 8px rgba(0, 210, 255, 0.3) inset, 0 0 8px rgba(0, 210, 255, 0.3) !important;
+        border-radius: 8px !important;
+        padding: 10px 15px !important;
+        margin-bottom: 10px !important;
+        list-style: none !important;
+        transition: all 0.3s ease !important;
+        font-weight: bold !important;
+      }
+      .favorites-list li:hover {
+        background: #00d2ff !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px #00d2ff inset, 0 0 15px #00d2ff !important;
+        transform: translateX(8px) !important; /* Se mueve un poco a la derecha al pasar el mouse */
+      }
+
+      /* Botones de navegación */
+      .btn-back, .btn-home {
+        background: transparent !important;
+        color: #00d2ff !important;
+        border: 1px solid #00d2ff !important;
+        transition: all 0.3s !important;
+      }
+      .btn-back:hover, .btn-home:hover {
+        background: #00d2ff !important;
+        color: #000 !important;
+        box-shadow: 0 0 15px #00d2ff !important;
+      }
+      
+      /* Botón secreto animado */
+      #btn-secreto {
+        background: linear-gradient(45deg, #00d2ff, #3a7bd5) !important;
+        color: white !important;
+        border: none !important;
+        box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4) !important;
+        transition: transform 0.2s !important;
+        margin-top: 15px; 
+        padding: 10px 20px; 
+        cursor: pointer; 
+        border-radius: 8px; 
+        font-weight: bold;
+      }
+      #btn-secreto:hover {
+        transform: scale(1.05) !important;
+      }
+      #disco-secreto {
+        color: #00d2ff !important;
+        text-shadow: 0 0 5px rgba(0,210,255,0.5) !important;
+        display: none; 
+        font-style: italic; 
+        margin-top: 10px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar">
@@ -32,55 +141,74 @@
         <div class="profile-card">
           <div class="profile-header">
             <img
-              src="../../img/rodrigo.jpg"
-              alt="Foto de Rodrigo"
+              src="../../img/MartinAvatar.png"
+              alt="Foto de Martin"
               class="profile-photo"
               id="profilePhoto"
             />
             <div class="profile-info-header">
-              <h1 class="profile-name">NOMBRE</h1>
-              <p class="profile-location">📍 UBICACION</p>
-              <p class="profile-age">🎂 99 años</p>
+              <h1 class="profile-name">MARTÍN</h1>
+              <p class="profile-location">📍 CABA</p>
+              <p class="profile-age">🎂 47 años</p>
             </div>
           </div>
 
           <div class="profile-section">
             <h2>Habilidades</h2>
             <div class="skills-container">
-              <span class="skill-tag">A</span>
-              <span class="skill-tag">B</span>
-              <span class="skill-tag">C</span>
-              <span class="skill-tag">D</span>
-              <span class="skill-tag">E</span>
-              <span class="skill-tag">F</span>
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React</span>
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Python</span>
             </div>
           </div>
 
           <div class="profile-section">
             <h2>Películas Favoritas</h2>
             <ul class="favorites-list">
-              <li>🎬 A</li>
-              <li>🎬 B</li>
-              <li>🎬 C</li>
-              <li>🎬 D</li>
+              <li>🎬 Interestelar</li>
+              <li>🎬 Volver al Futuro</li>
+              <li>🎬 Matrix</li>
+              <li>🎬 Esperando la carroza</li>
             </ul>
           </div>
 
           <div class="profile-section">
             <h2>Discos Musicales Favoritos</h2>
             <ul class="favorites-list">
-              <li>🎵 A</li>
-              <li>🎵 B</li>
-              <li>🎵 C</li>
-              <li>🎵 D</li>
+              <li>🎵 Tengo que parar - Miguel Mateos</li>
+              <li>🎵 Giros - Fito Páez</li>
+              <li>🎵 The Black Album - Metallica</li>
+              <li>🎵 Appetite for Destruction - Guns N' Roses</li>
             </ul>
+            
+            <button id="btn-secreto" onclick="revelarDiscoSecreto()">Tocar para una sorpresa 🎁</button>
+            <p id="disco-secreto">
+              🎵 Disco secreto: "Sueño Stereo" - Soda Stereo
+            </p>
           </div>
         </div>
 
         <div class="navigation-buttons">
-          <a href="../../index.html" class="btn-nav btn-home">🏠 Inicio</a>
+          <a href="../../index.html" class="btn-home">🏠 Inicio</a>
         </div>
       </div>
     </div>
+
+    <script>
+        function revelarDiscoSecreto() {
+            var secreto = document.getElementById("disco-secreto");
+            var boton = document.getElementById("btn-secreto");
+            if (secreto.style.display === "none" || secreto.style.display === "") {
+                secreto.style.display = "block";
+                boton.innerText = "Ocultar sorpresa 🙈";
+            } else {
+                secreto.style.display = "none";
+                boton.innerText = "Tocar para una sorpresa 🎁";
+            }
+        }
+    </script>
   </body>
 </html>
