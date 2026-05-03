@@ -1,6 +1,6 @@
 # Grupo 1 – Trabajo Practico uno
 
-🔗 **Deploy:** ToDo: Al deployear, agregar el link
+🔗 **Deploy:** [Link al deploy](https://front-tp1-grupo-1-guzman-morales-az.vercel.app/index.html)
 
 ---
 
@@ -104,8 +104,8 @@ README.md
 ---
 
 ## 🚀 Enlace al Proyecto Desplegado
-
-ToDo: Al deployear, colocar el link
+- [Link al deploy](https://front-tp1-grupo-1-guzman-morales-az.vercel.app/index.html)
+  - https://front-tp1-grupo-1-guzman-morales-az.vercel.app/index.html
 
 ---
 
