@@ -1,86 +1,353 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOMBRE - Perfil</title>
-    <link rel="stylesheet" href="../../css/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav class="navbar">
-      <div class="container">
-        <h2 class="logo">IFTS - Frontend</h2>
-        <ul class="nav-links">
-          <li><a href="../../index.html">Inicio</a></li>
-          <li><a href="../../bitacora.html">Bitácora</a></li>
-        </ul>
-      </div>
-    </nav>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florencia Guzmán - Perfil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Variables de tema ── */
+    :root[data-theme="light"] {
+      --bg:         #ffffff;
+      --bg-card:    #f5f5ff;
+      --text:       #6366f1;
+      --text-body:  #1f2937;
+      --accent:     #6366f1;
+      --accent-fg:  #ffffff;
+      --badge-bg:   #ede9fe;
+      --badge-text: #4f46e5;
+      --nav-bg:     #6366f1;
+      --nav-text:   #ffffff;
+      --border:     #e0e7ff;
+      --shadow:     rgba(99,102,241,0.12);
+    }
+    :root[data-theme="dark"] {
+      --bg:         #0f0f1a;
+      --bg-card:    #1a1a2e;
+      --text:       #a5b4fc;
+      --text-body:  #e2e8f0;
+      --accent:     #818cf8;
+      --accent-fg:  #0f0f1a;
+      --badge-bg:   #312e81;
+      --badge-text: #c7d2fe;
+      --nav-bg:     #1e1b4b;
+      --nav-text:   #c7d2fe;
+      --border:     #312e81;
+      --shadow:     rgba(0,0,0,0.4);
+    }
 
-    <div class="profile-container">
-      <div class="container">
-        <div class="back-navigation">
-          <a href="../../index.html" class="btn-back">← Volver al equipo</a>
-        </div>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: var(--bg);
+      color: var(--text-body);
+      min-height: 100vh;
+      transition: background 0.35s, color 0.35s;
+    }
 
-        <div class="profile-card">
-          <div class="profile-header">
-            <img
-              src="../../img/rodrigo.jpg"
-              alt="Foto de Rodrigo"
-              class="profile-photo"
-              id="profilePhoto"
-            />
-            <div class="profile-info-header">
-              <h1 class="profile-name">NOMBRE</h1>
-              <p class="profile-location">📍 UBICACION</p>
-              <p class="profile-age">🎂 99 años</p>
-            </div>
-          </div>
+    /* ── Nav ── */
+    nav {
+      background: var(--nav-bg);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+      transition: background 0.35s;
+    }
+    .nav-brand {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      color: var(--nav-text);
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a {
+      color: var(--nav-text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
 
-          <div class="profile-section">
-            <h2>Habilidades</h2>
-            <div class="skills-container">
-              <span class="skill-tag">A</span>
-              <span class="skill-tag">B</span>
-              <span class="skill-tag">C</span>
-              <span class="skill-tag">D</span>
-              <span class="skill-tag">E</span>
-              <span class="skill-tag">F</span>
-            </div>
-          </div>
+    /* ── Toggle de tema ── */
+    .theme-toggle {
+      background: rgba(255,255,255,0.15);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 50px;
+      width: 56px;
+      height: 28px;
+      cursor: pointer;
+      position: relative;
+      transition: background 0.35s;
+      flex-shrink: 0;
+    }
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: #fff;
+      transition: transform 0.35s cubic-bezier(.4,0,.2,1), background 0.35s;
+    }
+    [data-theme="dark"] .theme-toggle::before {
+      transform: translateX(28px);
+      background: #818cf8;
+    }
+    .toggle-label {
+      font-size: 0.75rem;
+      color: var(--nav-text);
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-          <div class="profile-section">
-            <h2>Películas Favoritas</h2>
-            <ul class="favorites-list">
-              <li>🎬 A</li>
-              <li>🎬 B</li>
-              <li>🎬 C</li>
-              <li>🎬 D</li>
-            </ul>
-          </div>
+    /* ── Layout ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
 
-          <div class="profile-section">
-            <h2>Discos Musicales Favoritos</h2>
-            <ul class="favorites-list">
-              <li>🎵 A</li>
-              <li>🎵 B</li>
-              <li>🎵 C</li>
-              <li>🎵 D</li>
-            </ul>
-          </div>
-        </div>
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      transition: gap 0.2s;
+    }
+    .back-link:hover { gap: 0.7rem; }
 
-        <div class="navigation-buttons">
-          <a href="../../index.html" class="btn-nav btn-home">🏠 Inicio</a>
-        </div>
+    /* ── Card principal ── */
+    .card {
+      background: var(--bg-card);
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px var(--shadow);
+      transition: background 0.35s, border-color 0.35s, box-shadow 0.35s;
+    }
+
+    /* ── Header del perfil ── */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .avatar-wrap {
+      position: relative;
+      flex-shrink: 0;
+    }
+    .avatar-wrap img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      display: block;
+    }
+    .avatar-placeholder {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1, #818cf8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      border: 3px solid var(--accent);
+    }
+    .profile-info h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+    .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .meta span {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      opacity: 0.8;
+    }
+
+    /* ── Secciones ── */
+    .section {
+      margin-top: 1.8rem;
+    }
+    .section h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .section h2::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: var(--border);
+      margin-left: 0.5rem;
+      border-radius: 2px;
+    }
+
+    /* Badges de habilidades */
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .badge {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: transform 0.15s, background 0.35s;
+    }
+    .badge:hover { transform: translateY(-2px); }
+
+    /* Listas */
+    .list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .list li {
+      font-size: 0.95rem;
+      color: var(--text-body);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    /* ── Animación entrada ── */
+    .card { animation: fadeUp 0.5s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      .profile-header { flex-direction: column; align-items: flex-start; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="../../index.html">IFTS - Frontend</a>
+    <div class="nav-links">
+      <a href="../../index.html">Inicio</a>
+      <a href="../../bitacora.html">Bitácora</a>
+      <div class="toggle-wrap">
+        <span class="toggle-label" id="toggle-label">☀️</span>
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema"></button>
       </div>
     </div>
-  </body>
+  </nav>
+
+  <div class="container">
+
+    <a class="back-link" href="../../index.html">← Volver al equipo</a>
+
+    <div class="card">
+
+      <!-- Header -->
+      <div class="profile-header">
+        <div class="avatar-wrap">
+          <!-- Si tenés una foto, reemplazá este div por: <img src="../../img/florencia.jpg" alt="Foto de Florencia"> -->
+          <div class="avatar-placeholder">👩‍💻</div>
+        </div>
+        <div class="profile-info">
+          <h1>Florencia Guzmán</h1>
+          <div class="meta">
+            <span>📍 González Catán</span>
+            <span>🎂 29 años</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Habilidades -->
+      <div class="section">
+        <h2>🛠 Habilidades</h2>
+        <div class="badges">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">Canva</span>
+        </div>
+      </div>
+
+      <!-- Películas -->
+      <div class="section">
+        <h2>🎬 Películas Favoritas</h2>
+        <ul class="list">
+          <li>🎬 Harry Potter</li>
+          <li>🎬 El Señor de los Anillos</li>
+          <li>🎬 Soy Leyenda</li>
+        </ul>
+      </div>
+
+      <!-- Discos -->
+      <div class="section">
+        <h2>🎵 Discos Musicales Favoritos</h2>
+        <ul class="list">
+          <li>🎵 Gustavo Cerati – Amor Amarillo</li>
+          <li>🎵 Soda Stereo – Dynamo</li>
+          <li>🎵 Coldplay – A Head Full of Dreams</li>
+        </ul>
+      </div>
+
+    </div><!-- /card -->
+
+    <footer>
+      <a href="../../index.html">🏠 Inicio</a>
+    </footer>
+
+  </div><!-- /container -->
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    const label  = document.getElementById('toggle-label');
+    const html   = document.documentElement;
+
+    toggle.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      label.textContent = isDark ? '☀️' : '🌙';
+    });
+  </script>
+
+</body>
 </html>

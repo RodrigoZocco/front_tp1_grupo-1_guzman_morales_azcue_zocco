@@ -93,6 +93,10 @@ README.md
 
 ### Páginas individuales
 
+- En la página de Florencia:
+  - Al clickear el botón de tema en la barra de navegación, se alterna entre modo claro ☀️ y modo oscuro 🌙, cambiando los colores de toda la página con una transición animada.
+    ![Imagen](./src/img/js-florencia.png)
+
 - En la pagina de Rodrigo:
   - Al clickear la pelota de basket, hará un efecto de pique y se escuchara el sonido de la misma.
     ![Imagen](./src/img/js-rodrigo.jpg)
