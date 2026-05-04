@@ -1,3 +1,10 @@
+:root {
+  --primary-color: #982598;
+  --secondary-color: #15173D;
+  --accent-color: #36064D;
+  --text-light: #555;
+}
+
 #profilePhoto {
     transition: ease-in-out 0.3s;
 }
@@ -8,6 +15,7 @@
 
 .skill-tag {
     transition: ease-in-out 0.2s;
+    background-color: var(--accent-color);
 }
 
 .skill-tag:hover {
@@ -17,6 +25,7 @@
 
 .favorites-list li {
     transition: ease-in-out 0.2s;
+    border-color: var(--accent-color);
 }
 
 .favorites-list li:hover {
@@ -27,12 +36,46 @@
     width: 200px;
     height: 40px;
     transition: ease-in-out 0.2s;
+    background-color: var(--secondary-color);
 }
 
 .confettiBtn:hover {
     transform: scale(1.05);
+    background-color: var(--accent-color);
 }
 
 .confettiBtn:active {
     transform: scale(1);
+}
+
+.btn-back {
+    color: white;
+    background-color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn-back:hover {
+    border: 2px solid var(--accent-color);
+    background-color: var(--accent-color);
+}
+
+.btn-home {
+    background-color: var(--secondary-color);
+}
+
+.btn-home:hover {
+    background-color: var(--accent-color);
+}
+
+.profile-name {
+    animation: shadow-dance 2s infinite;
+}
+
+@keyframes shadow-dance {
+    0%, 100% {
+        text-shadow: 5px 5px 0 var(--secondary-color);
+    }
+    50% {
+        text-shadow: -5px -5px 0 var(--accent-color);
+    }
 }
